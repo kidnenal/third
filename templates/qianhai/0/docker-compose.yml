@@ -1,0 +1,16 @@
+version: '2'
+services:
+    qianhai:
+        image: 10.1.241.80:5000/third-qianhai
+        environment:
+          eureka.client.service-url.defaultZone: http://10.42.1.33:8761/eureka/
+          zipkin.server-url: http://10.42.246.135:9411
+          eureka.instance.preferIpAddress: 'true'
+          eureka.instance.instance-id: $${spring.cloud.client.ipAddress}:$${server.port}
+        stdin_open: true
+        tty: true
+        ports:
+        - 12124:50519/tcp
+        labels:
+          io.rancher.container.pull_image: always
+          io.rancher.scheduler.affinity:host_label: ip=100

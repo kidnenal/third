@@ -3,6 +3,6 @@ catalog:
   name: third-data-api
   version: 1.0.0
 services:
-  huadao:
+  xinhunbao:
     scale: 2
     start_on_create: true

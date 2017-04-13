@@ -1,0 +1,11 @@
+version: '2'
+services:
+    xinhunbao:
+    image: 10.1.241.80:5000/xinhunbao
+    stdin_open: true
+    tty: true
+    ports:
+    - 12123:8011/tcp
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: group=microservice
