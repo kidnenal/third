@@ -1,0 +1,8 @@
+version: '2'
+catalog:
+  name: huadao
+  version: 1.0.0
+services:
+  huadao:
+    scale: 2
+    start_on_create: true
